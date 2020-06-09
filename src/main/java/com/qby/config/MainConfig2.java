@@ -1,6 +1,7 @@
 package com.qby.config;
 
 
+import com.qby.beans.Color;
 import com.qby.beans.Person;
 import com.qby.condition.LinuxCondition;
 import com.qby.condition.WindowCondition;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.*;
 // 类中组件统一设置 满足当前条件 这个类中的所有bean注册才能生效
 @Conditional({WindowCondition.class})
 @Configuration
+@Import(Color.class)
 public class MainConfig2 {
 
 //    @Scope("prototype")

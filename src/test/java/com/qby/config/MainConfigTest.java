@@ -51,6 +51,17 @@ public class MainConfigTest {
         System.out.println(beansOfType);
     }
 
+    @Test
+    public void testImport() {
+        printBeans(this.application);
+    }
+
+    private void printBeans(AnnotationConfigApplicationContext application) {
+        String[] beanDefinitionNames = application.getBeanDefinitionNames();
+        for (int i = 0; i < beanDefinitionNames.length; i++) {
+            System.out.println(beanDefinitionNames[i]);
+        }
+    }
 
 
 }

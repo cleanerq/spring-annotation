@@ -21,7 +21,6 @@ import org.springframework.stereotype.Controller;
 public class MainConfig {
 
     @Bean("person")
-
     public Person person01() {
         return new Person("lisi", 30);
     }
