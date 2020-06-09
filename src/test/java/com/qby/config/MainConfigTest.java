@@ -1,5 +1,6 @@
 package com.qby.config;
 
+import com.qby.beans.Blue;
 import com.qby.beans.Person;
 import org.junit.Test;
 import org.junit.internal.builders.JUnit3Builder;
@@ -54,6 +55,18 @@ public class MainConfigTest {
     @Test
     public void testImport() {
         printBeans(this.application);
+
+        Blue bean = application.getBean(Blue.class);
+        System.out.println(bean);
+
+        // 工厂bean获取的是调用getObject创建的对象
+        Object colorFactoryBean1 = application.getBean("colorFactoryBean");
+        Object colorFactoryBean2 = application.getBean("colorFactoryBean");
+        System.out.println(colorFactoryBean1.getClass());
+        System.out.println(colorFactoryBean1 == colorFactoryBean2);
+
+        Object colorFactoryBean3 = application.getBean("&colorFactoryBean");
+        System.out.println(colorFactoryBean3);
     }
 
     private void printBeans(AnnotationConfigApplicationContext application) {
