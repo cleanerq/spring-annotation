@@ -1,12 +1,27 @@
 package com.qby.beans;
 
+import org.springframework.beans.factory.annotation.Value;
+
 /**
  * @author qby
  * @date 2020/6/9 11:07
  */
 public class Person {
+
+    @Value("张三")
     private String name;
+    @Value("#{20-2}")
     private Integer age;
+    @Value("${person.nickName}")
+    private String nickName;
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
 
     public Person(String name, Integer age) {
         this.name = name;
@@ -18,6 +33,7 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", nickName='" + nickName + '\'' +
                 '}';
     }
 
