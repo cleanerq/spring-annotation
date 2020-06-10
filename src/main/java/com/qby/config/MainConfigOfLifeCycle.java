@@ -1,5 +1,8 @@
 package com.qby.config;
 
+import com.qby.beans.Car;
+import org.springframework.context.annotation.*;
+
 /**
  * bean的生命周期
  *  bean创建-初始化-销毁的过程
@@ -10,5 +13,13 @@ package com.qby.config;
  * @author qby
  * @date 2020/6/9 20:08
  */
+@ComponentScan(value = "com.qby.beans")
+@Configuration
 public class MainConfigOfLifeCycle {
+
+    @Scope(value = "prototype")
+    @Bean(initMethod = "init", destroyMethod = "destroy")
+    public Car car() {
+        return new Car();
+    }
 }
