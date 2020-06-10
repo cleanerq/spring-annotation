@@ -37,6 +37,11 @@
                 <version>5.2.6.RELEASE</version>
                 <scope>test</scope>
             </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
         </dependencies>
 
 
