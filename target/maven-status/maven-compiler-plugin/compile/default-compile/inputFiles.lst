@@ -4,8 +4,10 @@ F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Yellow.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Blue.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\RainBow.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\config\MainConfig.java
+F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\config\MainConfigOfAOP.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Dog.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\MyBeanPostProcessor.java
+F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\aop\LogAspects.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Red.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\config\MainConfigOfAutowired.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Car.java
@@ -20,6 +22,7 @@ F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\typefilter\MyTypeFilt
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\ColorFactoryBean.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Boss.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Cat.java
+F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\aop\MathCalculator.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\service\BookService.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\controller\BookController.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\condition\LinuxCondition.java

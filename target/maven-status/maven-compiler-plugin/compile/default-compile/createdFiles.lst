@@ -1,10 +1,12 @@
 com\qby\beans\Car.class
 com\qby\config\MainConfigOfLifeCycle.class
+com\qby\aop\MathCalculator.class
 com\qby\config\MainConfigOfAutowired.class
 com\qby\beans\Person.class
 com\qby\condition\MyImportSelector.class
 com\qby\config\MainConfig2.class
 com\qby\beans\Color.class
+com\qby\config\MainConfigOfAOP.class
 com\qby\beans\RainBow.class
 com\qby\beans\Red.class
 com\qby\dao\BookDao.class
@@ -14,6 +16,7 @@ com\qby\condition\WindowCondition.class
 com\qby\service\BookService.class
 com\qby\beans\Boss.class
 com\qby\typefilter\MyTypeFilter.class
+com\qby\aop\LogAspects.class
 com\qby\beans\Yellow.class
 com\qby\condition\MyImportBeanDefinitionRegistrar.class
 com\qby\config\MainConfigOfProfile.class
