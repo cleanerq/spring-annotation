@@ -16,9 +16,17 @@ public class MainConfigOfAOPTest {
     public void test01() {
         AnnotationConfigApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(MainConfigOfAOP.class);
+        // 不要自己创建对象
+//        MathCalculator mathCalculator = new MathCalculator();
+//        mathCalculator.div(1, 1);
+        // 要从spring容器中取得
+        try {
+            MathCalculator bean = applicationContext.getBean(MathCalculator.class);
+            bean.div(1, 0);
 
-        MathCalculator mathCalculator = new MathCalculator();
-        mathCalculator.div(1, 1);
+        } catch (Exception e) {
+
+        }
 
         applicationContext.close();
     }

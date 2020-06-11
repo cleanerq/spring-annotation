@@ -23,6 +23,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 5.将切面类和业务逻辑类(目标方法所在类)都加入到容器中
  * 6.必须告诉spring容器哪个类是切面类给切面类增加注解@Aspect
  * 7.给配置类增加@EnableAspectJAutoProxy 注解 开启基于注解的apo模式
+ *  在spring中很多的@EnableXXX
+ *
+ * 原理调用流程：
+ *
  */
 @EnableAspectJAutoProxy
 @Configuration
