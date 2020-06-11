@@ -1,10 +1,12 @@
 package com.qby.config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.qby.beans.Yellow;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.EmbeddedValueResolverAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.util.StringValueResolver;
 
@@ -18,7 +20,8 @@ import java.beans.PropertyVetoException;
  * @author qby
  * @date 2020/6/10 18:56
  */
-@PropertySource("classpath:/dbconfig.properties")
+//@Profile("test")
+@PropertySource(value = {"classpath:/dbconfig.properties"})
 @Configuration
 public class MainConfigOfProfile implements EmbeddedValueResolverAware {
 
@@ -32,12 +35,19 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware {
 
     private StringValueResolver valueResolver;
 
+    @Profile("test")
+    @Bean
+    public Yellow yellow() {
+        return new Yellow();
+    }
+
     @Override
     public void setEmbeddedValueResolver(StringValueResolver resolver) {
         this.valueResolver = resolver;
         this.driverClass = valueResolver.resolveStringValue("${db.driverClass}");
     }
 
+    @Profile("test")
     @Bean("testDataSource")
     public DataSource dataSourceTest(@Value("${db.password}") String pwd) throws PropertyVetoException {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
@@ -48,6 +58,7 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware {
         return comboPooledDataSource;
     }
 
+    @Profile("dev")
     @Bean("devDataSource")
     public DataSource dataSourceDev(@Value("${db.password}") String pwd) throws PropertyVetoException {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
@@ -58,6 +69,7 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware {
         return comboPooledDataSource;
     }
 
+    @Profile("prod")
     @Bean("prodDataSource")
     public DataSource dataSourceProd(@Value("${db.password}") String pwd) throws PropertyVetoException {
         ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();

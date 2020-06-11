@@ -2,6 +2,7 @@ package com.qby.config;
 
 import com.qby.beans.Blue;
 import com.qby.beans.Person;
+import com.qby.dao.BookDao;
 import org.junit.Test;
 import org.junit.internal.builders.JUnit3Builder;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -25,6 +26,8 @@ public class MainConfigTest {
         for (int i = 0; i < beanDefinitionNames.length; i++) {
             System.out.println(beanDefinitionNames[i]);
         }
+        BookDao bean = application.getBean(BookDao.class);
+        System.out.println(bean);
     }
 
     @Test
