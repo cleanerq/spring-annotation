@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
  * @date 2020/6/9 11:27
  */
 @Configuration
-@ComponentScans(value = {@ComponentScan(value = "com.qby",
+@ComponentScans(value = {@ComponentScan(value = {"com.qby.service",
+            "com.qby.controller",
+            "com.qby.dao"},
         includeFilters = {
             @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
             @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class}),
