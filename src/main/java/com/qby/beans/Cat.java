@@ -16,6 +16,7 @@ public class Cat implements InitializingBean, DisposableBean {
 
     @Override
     public void destroy() throws Exception {
+        // 对象销毁之前调用
         System.out.println("cat destroy");
     }
 
