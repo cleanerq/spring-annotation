@@ -30,7 +30,7 @@ import java.beans.PropertyVetoException;
  *     public PlatformTransactionManager transactionManager()
  *
  * 1 @EnableTransactionManagement 开启事务管理功能
- * 2 注册事务管理器在容器中
+ * 2 注册事务管理器在容器中 PlatformTransactionManager
  * 3 给方法标上@Transactional 表示当前方法是事物方法
  *
  * 原理：

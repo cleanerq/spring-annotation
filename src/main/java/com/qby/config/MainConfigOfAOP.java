@@ -25,6 +25,21 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 7.给配置类增加@EnableAspectJAutoProxy 注解 开启基于注解的apo模式
  *  在spring中很多的@EnableXXX
  *
+ *  AOP原理：【看给容器中注册了什么组件，这个组件什么时候工作，这个组件的功能是什么？】
+ *      @EnableAspectJAutoProxy
+ *
+ *  1、@EnableAspectJAutoProxy 是什么？
+ *      @Import(AspectJAutoProxyRegistrar.class) 给容器中导入 AspectJAutoProxyRegistrar
+ *          利用 AspectJAutoProxyRegistrar 自定义给容器中注册 bean
+ *          internalAutoProxyCreator = AnnotationAwareAspectJAutoProxyCreator
+ *      给容器中注册一个 AnnotationAwareAspectJAutoProxyCreator
+ *  2、AnnotationAwareAspectJAutoProxyCreator
+ *         AspectJAwareAdvisorAutoProxyCreator
+ *          AbstractAdvisorAutoProxyCreator
+ *              AbstractAutoProxyCreator
+ *                  implements SmartInstantiationAwareBeanPostProcessor
+ *     关注后置处理器（在bean初始化完成前后做事情），自动装配BeanFactory
+ *
  * 原理调用流程：
  *  1）、传入配置类，创建IOC容器
  *  2）、注册配置类，调用refresh（）刷新容器
@@ -42,10 +57,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *          3）initializeBean 初始化bean
  *              1）invokeAwareMethods 处理aware接口的方法回调
  *              2）applyBeanPostProcessorsBeforeInitialization
- *                  应用后置处理器BeanPostProcessorsBeforeInitialization方法
+ *                  应用后置处理器 BeanPostProcessorsBeforeInitialization 方法
  *              3）invokeInitMethods 执行自定义初始化方法
  *              4）applyBeanPostProcessorsAfterInitialization
- *                  执行后置处理器的BeanPostProcessorsAfterInitialization
+ *                  执行后置处理器的 BeanPostProcessorsAfterInitialization
  *          4）BeanPostprocessor(AnnotationAwareAspectJAutoProxyCreator)创建成功->aspectJAdvisorsBuilder
  *       7）、把BeanPostprocessor注册到BeanFactory中
  *          beanFactory.addBeanPostProcessor(postProcessor);
@@ -55,8 +70,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *      1）、遍历获取容器中所有的bean，依次创建对象getBean(beanName)
  *          getBean(beanName)->doGetBean()->getSingleton
  *      2）、创建bean
- *          【AnnotationAwareAspectJAutoProxyCreator在所有bean创建之前会有一个拦截，
- *              InstantiationAwareBeanPostProcessor，会调用 postProcessBeforeInstantiation（）方法】
+ *          【 AnnotationAwareAspectJAutoProxyCreator，在所有bean创建之前会有一个拦截，
+ *             InstantiationAwareBeanPostProcessor，会调用 postProcessBeforeInstantiation（）方法】
  *          1）、先从缓存中获取当前bean，如果能获取到，说明bean是之前被创建过的，直接使用，否则再创建；
  *              只要创建好的bean都会被缓存起来
  *          2）、createBean()，创建bean
@@ -68,7 +83,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *                  1）、后置处理器先尝试返回对象：
  *                      bean = applyBeanPostProcessorsBeforeInstantiation(targetType, beanName);
  *                          拿到所有后置处理器，如果是 InstantiationAwareBeanPostProcessor；
- *                          就执行InstantiationAwareBeanPostProcessor.postProcessBeforeInstantiation
+ *                          就执行 InstantiationAwareBeanPostProcessor(AbstractAutoProxyCreator).postProcessBeforeInstantiation
  *                      if (bean != null) {
  * 						    bean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
  *                      }
