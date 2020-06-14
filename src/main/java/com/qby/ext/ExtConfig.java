@@ -21,6 +21,18 @@ import org.springframework.context.annotation.Configuration;
  *      postProcessBeanDefinitionRegistry（）;
  *      在所有bean定义信息将要被加载，bean实例还未创建时执行
  *
+ *      优先于 BeanFactoryPostProcessor 执行。
+ *      利用 BeanDefinitionRegistryPostProcessor 给容器中再额外添加一些组件
+ *
+ *  原理：
+ *      1）、IOC创建对象
+ *      2）、refresh() -> invokeBeanFactoryPostProcessors(beanFactory);
+ *      3）、先从容器中获取到所有的 BeanDefinitionRegistryPostProcessor 组件。
+ *          1、依次触发所有的 postProcessBeanDefinitionRegistry 方法
+ *          2、再来触发 postProcessBeanFactory 方法 BeanFactoryPostProcessor
+ *      4）、再来从容器中找到 BeanFactoryPostProcessor 组件，然后依次触发 postProcessBeanFactory()方法
+ *
+ *
  * @author qby
  * @date 2020/6/13 18:57
  */
