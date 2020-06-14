@@ -32,6 +32,10 @@ import org.springframework.context.annotation.Configuration;
  *          2、再来触发 postProcessBeanFactory 方法 BeanFactoryPostProcessor
  *      4）、再来从容器中找到 BeanFactoryPostProcessor 组件，然后依次触发 postProcessBeanFactory()方法
  *
+ *  3、ApplicationListener ，监听容器中发布的事件，事件驱动模型开发
+ *      public interface ApplicationListener<E extends ApplicationEvent> extends EventListener
+ *          监听 ApplicationEvent 及其下面的子事件；
+ *
  *
  * @author qby
  * @date 2020/6/13 18:57
