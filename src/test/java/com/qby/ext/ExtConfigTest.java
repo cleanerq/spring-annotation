@@ -2,6 +2,7 @@ package com.qby.ext;
 
 import com.qby.config.MainConfig;
 import org.junit.Test;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.junit.Assert.*;
@@ -16,7 +17,9 @@ public class ExtConfigTest {
     public void test01() {
         AnnotationConfigApplicationContext application
                 = new AnnotationConfigApplicationContext(ExtConfig.class);
-
+        // 发布事件
+        application.publishEvent(new ApplicationEvent(new String("我发布的事件")) {
+            });
 
         application.close();
     }
