@@ -10,6 +10,7 @@ F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\MyBeanPostProce
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\aop\LogAspects.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Red.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\tx\UserService.java
+F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\ext\ExtConfig.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\config\MainConfigOfAutowired.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Car.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\config\MainConfigOfPropertyValues.java
@@ -26,6 +27,7 @@ F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\beans\Cat.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\aop\MathCalculator.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\service\BookService.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\controller\BookController.java
+F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\ext\MyBeanFactoryPostProcessor.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\tx\TxConfig.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\condition\LinuxCondition.java
 F:\90.IdeaProjects\spring-annotation\src\main\java\com\qby\main\TestMain.java

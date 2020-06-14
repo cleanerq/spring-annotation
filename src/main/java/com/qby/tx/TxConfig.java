@@ -48,11 +48,11 @@ import java.beans.PropertyVetoException;
  * 3）、ProxyTransactionManagementConfiguration
  *      1）、给容器中注册事务增强器
  *          1）、事务增强器要用事务注解的信息 AnnotationTransactionAttributeSource 解析事务注解
- *          2）、事务拦截器
- *              TransactionInterceptor 保存了事务属性信息 事务管理器
+ *      2）、事务拦截器
+ *          TransactionInterceptor 保存了事务属性信息 事务管理器
  *              它是一个 MethodInterceptor 方法拦截器
  *              在目标方法执行的时候：
- *                  执行拦截器链：
+ *              执行拦截器链：
  *                  事务拦截器
  *                      1）、先获取事务相关的属性
  *                      2）、再获取PlatformTransactionManager 事务管理器
