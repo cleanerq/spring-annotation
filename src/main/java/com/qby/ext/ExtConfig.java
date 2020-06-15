@@ -40,7 +40,7 @@ import org.springframework.context.annotation.Configuration;
  *
  *      步骤：
  *          1）、写一个监听器来监听某个事件(ApplicationEvent 及其子类) 实现 ApplicationListener<ApplicationEvent> 接口
- *              @EventListener 注解
+ *              @EventListener 注解 任意方法都可以监听事件
  *              原理：使用 EventListenerMethodProcessor 处理器来解析方法上的 @EventListener 注解
  *
  *          2）、把监听器放入到容器中
@@ -80,8 +80,12 @@ import org.springframework.context.annotation.Configuration;
  *          将listener 注册到ApplicationEventMulticaster 中
  *          getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName);
  *
- *      SmartInitializingSingleton原理
- *
+ *      SmartInitializingSingleton 接口原理 -> afterSingletonsInstantiated()
+ *          1）、IOC容器创建对象 并refresh()
+ *          2）、finishBeanFactoryInitialization(beanFactory); 初始化剩下的单实例bean
+ *              1）、先创建所有的单实例bean getBean()方法创建bean
+ *              2）、获取所有创建好的单实例bean 判断是否是 SmartInitializingSingleton 类型接口
+ *                  如果是就调用 afterSingletonsInstantiated() 方法
  *
  * @author qby
  * @date 2020/6/13 18:57
