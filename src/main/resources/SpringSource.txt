@@ -1,6 +1,3 @@
-spring 注解学习
-spring annotation study
-
 Spring容器的refresh()【创建刷新】；
 1、prepareRefresh() 刷新前的预处理
     1）、initPropertySources()  初始化一些属性设置 子类（自容器）自定义个性化的属性设置方法

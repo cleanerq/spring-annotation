@@ -1,9 +1,11 @@
 package com.qby.ext;
 
 import com.qby.beans.Blue;
+import com.qby.beans.Color;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 
 /**
  *
@@ -77,7 +79,7 @@ import org.springframework.context.annotation.Configuration;
  *      2）、registerListeners();
  *          从容器中拿到所有的监听器 把他们注册到 applicationEventMulticaster 中
  *          String[] listenerBeanNames = getBeanNamesForType(ApplicationListener.class, true, false);
- *          将listener 注册到ApplicationEventMulticaster 中
+ *          将listener 注册到 ApplicationEventMulticaster 中
  *          getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName);
  *
  *      SmartInitializingSingleton 接口原理 -> afterSingletonsInstantiated()
