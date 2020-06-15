@@ -132,7 +132,7 @@ Spring容器的refresh()【创建刷新】；
                                 BeanPostProcessor.postProcessBeforeInitialization()
                             3）、【执行初始化方法】invokeInitMethods(beanName, wrappedBean, mbd);
                                 1）、是否是 InitializingBean 接口的实现，执行接口规定的初始化
-                                2）、看是否自定义初始化方法，
+                                2）、看是否自定义初始化方法，init-method
                             4）、【执行后置处理器初始化之后方法】applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
                                 BeanPostProcessor.postProcessAfterInitialization()
                         5）、注册bean的销毁方法
