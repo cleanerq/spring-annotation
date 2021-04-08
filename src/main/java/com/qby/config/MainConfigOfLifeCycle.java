@@ -13,7 +13,7 @@ import org.springframework.context.annotation.*;
  * @author qby
  * @date 2020/6/9 20:08
  */
-//@ComponentScan(value = "com.qby.beans")
+@ComponentScan(value = "com.qby.beans")
 @Configuration
 public class MainConfigOfLifeCycle {
 

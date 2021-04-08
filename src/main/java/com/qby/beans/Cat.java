@@ -22,7 +22,7 @@ public class Cat implements InitializingBean, DisposableBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        // 在bean创建完成并初始化后调用
+        // 在bean创建完成并属性赋值后调用
         System.out.println("cat afterPropertiesSet");
     }
 }
