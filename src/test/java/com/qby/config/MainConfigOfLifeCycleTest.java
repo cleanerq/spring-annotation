@@ -18,7 +18,7 @@ public class MainConfigOfLifeCycleTest {
         System.out.println("容器创建完成...");
 
 
-        //Object bean = applicationContext.getBean("car");
+//        Object bean = applicationContext.getBean("car");
         applicationContext.close();
 
     }

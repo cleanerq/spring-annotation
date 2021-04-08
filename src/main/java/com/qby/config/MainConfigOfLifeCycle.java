@@ -13,11 +13,11 @@ import org.springframework.context.annotation.*;
  * @author qby
  * @date 2020/6/9 20:08
  */
-@ComponentScan(value = "com.qby.beans")
+//@ComponentScan(value = "com.qby.beans")
 @Configuration
 public class MainConfigOfLifeCycle {
 
-    @Scope(value = "prototype")
+//    @Scope(value = "prototype")
     @Bean(initMethod = "init", destroyMethod = "destroy")
     public Car car() {
         return new Car();
