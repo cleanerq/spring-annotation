@@ -14,13 +14,13 @@ import org.springframework.stereotype.Controller;
  */
 @Configuration
 @ComponentScans(value = {@ComponentScan(value = {"com.qby.service",
-            "com.qby.controller",
-            "com.qby.dao"},
+        "com.qby.controller",
+        "com.qby.dao"},
         includeFilters = {
-            @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
-            @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class}),
+                @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
+                @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class}),
                 @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookDao.class}),
-            @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})},
+                @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})},
         useDefaultFilters = false)})
 public class MainConfig {
 
