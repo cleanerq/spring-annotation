@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
  */
 public class Person {
 
-    @Value("张三")
+//    @Value("张三")
     private String name;
-    @Value("#{20-2}")
+//    @Value("#{20-2}")
     private Integer age;
     @Value("${person.nickName}")
     private String nickName;

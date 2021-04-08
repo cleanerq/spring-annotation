@@ -19,21 +19,21 @@ import org.springframework.context.annotation.*;
  * @date 2020/6/9 11:27
  */
 // 类中组件统一设置 满足当前条件 这个类中的所有bean注册才能生效
-@Conditional({WindowCondition.class})
+
 @Configuration
 @Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 // 导入组件ID默认是组件的全类名
 public class MainConfig2 {
 
-    // @Scope("prototype")
+    //     @Scope("prototype")
     @Bean("person")
-    @Lazy
+//    @Lazy
     public Person person01() {
-        System.out.println("调用方法！");
+        System.out.println("给容器中添加person ！");
         return new Person("张三", 25);
     }
 
-
+    @Conditional({WindowCondition.class})
     @Bean("bill")
     public Person person02() {
         return new Person("bill gates", 62);
@@ -47,7 +47,7 @@ public class MainConfig2 {
 
     @Bean
     public ColorFactoryBean colorFactoryBean() {
-        return  new ColorFactoryBean();
+        return new ColorFactoryBean();
     }
 
 }

@@ -42,6 +42,10 @@ public class MainConfigTest {
         System.out.println(person == person2);
     }
 
+    /**
+     * @Conditional
+     * -Dos.name=linux
+     */
     @Test
     public void test03() {
         String[] beanDefinitionNames = application.getBeanDefinitionNames();
