@@ -27,6 +27,7 @@ public class ColorFactoryBean implements FactoryBean<Color> {
      */
     @Override
     public boolean isSingleton() {
-        return false;
+        return true;
+//        return false;
     }
 }
