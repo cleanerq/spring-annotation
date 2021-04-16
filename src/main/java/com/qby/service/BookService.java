@@ -16,7 +16,7 @@ import javax.inject.Inject;
 public class BookService {
 
 
-//    @Qualifier("bookDao")
+    @Qualifier("bookDao")
 //    @Autowired(required = false)
 //    @Resource(name="bookDao2")
     @Autowired(required = false)

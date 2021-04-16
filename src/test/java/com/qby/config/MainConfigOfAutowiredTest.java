@@ -31,8 +31,8 @@ public class MainConfigOfAutowiredTest {
         System.out.println(bookService);
 
 
-//        BookDao bean =  applicationContext.getBean(BookDao.class);
-//        System.out.println(bean);
+        BookDao bookDao =  applicationContext.getBean(BookDao.class);
+        System.out.println(bookDao);
 
         Boss bean = applicationContext.getBean(Boss.class);
         System.out.println(bean);
